@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+#include <unistd.h>
+
 //Written by Gregory Keenan to run a simple program to set the exif data for pictures
 //It uses exiftool which must be downloaded seperatly. Using Exiftool directly is more 
 //simple and effective, but this program is because I will forget the exiftool commands
@@ -21,13 +23,20 @@ void writeExifDatatoAll(std::string *camera, std::string *model, std::string *le
 	
 	std::cout << "Camera Data Passed " << *camera << "\n";
 	std::string CombinedOutput;
+	std::string CameraArg, ModelArg, LensArg;
 
-	CombinedOutput = "exiftool -Make=\"" + *camera + "\" -Model=\"" + *model + "\" -Lens=\"" + *lens + "\" *.jpg";
+	CombinedOutput = "exiftool -Make=\"" + *camera + "\" -Model=\"" + *model + "\" -Lens=\"" + *lens + "\" ./";
+	CameraArg = "-Make="+ *camera;
+	ModelArg = "-Model="+ *model;
+	LensArg=  "-Lens=" + *lens;
 
 	std::cout << "Command being passed to exiftool: " << CombinedOutput << "\n";
 
-	std::system(CombinedOutput.c_str());
+	//This is apprently a poor way of calling commands in C++ due to several issues.
+	//TODO invistgate if this is correct vs myth
+	//std::system(CombinedOutput.c_str());
 
+	execl("/usr/local/bin/exiftool", "exiftool", CameraArg.c_str(), ModelArg.c_str(), LensArg.c_str(), "./", NULL);
 
 }
 
