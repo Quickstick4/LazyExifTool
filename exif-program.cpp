@@ -1,5 +1,3 @@
-#include <stdlib.h>
-
 #include <iostream>
 #include <string>
 
@@ -28,7 +26,7 @@ void writeExifDatatoAll(std::string *camera, std::string *model, std::string *le
 
 	std::cout << "Command being passed to exiftool: " << CombinedOutput << "\n";
 
-	system(CombinedOutput.c_str());
+	std::system(CombinedOutput.c_str());
 
 
 }
