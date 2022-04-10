@@ -26,9 +26,9 @@ void writeExifDatatoAll(std::string *camera, std::string *model, std::string *le
 
 	CombinedOutput = "exiftool -Make=\"" + *camera + "\" -Model=\"" + *model + "\" -Lens=\"" + *lens + "\" *.jpg";
 
-	std::cout << "CominedOutput: " << CombinedOutput << "\n";
+	std::cout << "Command being passed to exiftool: " << CombinedOutput << "\n";
 
-	system(CombinedOutput);
+	system(CombinedOutput.c_str());
 
 
 }
@@ -83,7 +83,7 @@ int main()
 
 
 
-	system("ls");
+	//system("ls");
 
 
 
