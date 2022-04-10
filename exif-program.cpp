@@ -70,6 +70,7 @@ void inputDetails()
 	else
 	{
 		std::cout << "Please use correct formating\n";
+		inputDetails();
 	}
 
 }
@@ -78,14 +79,6 @@ int main()
 {
 	introText();
 	inputDetails();
-
-	
-
-
-
-	//system("ls");
-
-
 
 	return 0;
 }
