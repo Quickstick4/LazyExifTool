@@ -1,5 +1,6 @@
-#LazyExif: exif-program.cpp wipe.cpp
-#	g++ -o LazyExif exif-program.cpp wipe.cpp
+#Saves/execute commands if a, b, c is newer than x
+#e.g. x: a, b, c
+#	do this
 
 LazyExif: exif-program.o wipe.o
 	g++ -o LazyExif exif-program.o wipe.o

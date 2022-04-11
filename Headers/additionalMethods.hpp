@@ -2,5 +2,5 @@
 //Header file for testing an idea
 
 void totalWipeExifData();
-void introText();
+int main();
 //what about a change here?
