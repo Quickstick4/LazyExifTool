@@ -78,6 +78,10 @@ Reset all colour back to normal: "\x1b[0m"
 | white   |     37     |     47     |
 +---------+------------+------------+
 */
+
+//N.B. I was told the above was MacOS specific, but seems to work in linux as per ANSII type
+//"\033[{FORMAT_ATTRIBUTE};{FORGROUND_COLOR};{BACKGROUND_COLOR}m{TEXT}\033[{RESET_FORMATE_ATTRIBUTE}m"
+
 	std::cout << "\x1b[31m" << "You have entered: " << "\n" << "\x1b[47m" << "Camera: " << camera << " Model: " << model << " Lens: " << lens << " \x1b[0m \n";
 
 	//std::cout << "\x1b[0m"; //reset text colour to normal
