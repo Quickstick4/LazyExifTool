@@ -38,7 +38,15 @@ void writeExifDatatoAll(std::string *camera, std::string *model, std::string *le
 	//TODO invistgate if this is correct vs myth
 	//std::system(CombinedOutput.c_str());
 
+
+#if __APPLE__
+
 	execl("/usr/local/bin/exiftool", "exiftool", CameraArg.c_str(), ModelArg.c_str(), LensArg.c_str(), "./", NULL);
+#elif __linux__
+
+	execl("/usr/bin/exiftool", "exiftool", CameraArg.c_str(), ModelArg.c_str(), LensArg.c_str(), "./", NULL);
+#endif
+	
 	
 
 }

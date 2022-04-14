@@ -16,4 +16,4 @@ You must have the ExifTool program installed from here: https://exiftool.org/
 N.B. If you have stumbled here by accident, please note:
 * This is just a simple program to enable my lazyness
 * Only fully supports MacOS at present, works in Linux in certain (most) configs
-* Assumes Exiftool is installed at /usr/local/bin/
+* Assumes Exiftool is installed for Mac: /usr/local/bin/  - Linux: /usr/bin/
