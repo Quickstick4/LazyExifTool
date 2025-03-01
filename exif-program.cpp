@@ -93,7 +93,7 @@ Reset all colour back to normal: "\x1b[0m"
 	std::cout << "\x1b[31m" << "You have entered: " << "\n" << "\x1b[47m" << "Camera: " << camera << " Model: " << model << " Lens: " << lens << " \x1b[0m \n";
 
 	//std::cout << "\x1b[0m"; //reset text colour to normal
-	std::cout << "Is this correct? (Y/N)" << "\n";
+	std::cout << "Is this correct? (Y/N) or go back/cancel (Q)" << "\n";
 
 	std::cin >> yn;
 	
@@ -107,6 +107,12 @@ Reset all colour back to normal: "\x1b[0m"
 	{
 		std::cout << "No\n";
 		inputDetails();
+	}
+
+	else if (!yn.compare("Q") || !yn.compare("q"))
+	{
+		std::cout << "Going Back\n";
+		main();
 	}
 
 	else
