@@ -17,3 +17,17 @@ N.B. If you have stumbled here by accident, please note:
 * This is just a simple program to enable my lazyness
 * Only fully supports MacOS at present, works in Linux in certain (most) configs
 * Assumes Exiftool is installed for Mac: /usr/local/bin/  - Linux: /usr/bin/
+
+## OpenSUSE install
+
+Add the Open Build Service repo:
+
+> sudo zypper addrepo https://download.opensuse.org/repositories/home:/Quickstick4/openSUSE_Tumbleweed/home:Quickstick4.repo
+
+Install
+
+> sudo zypper install LazyExifTool
+
+To run, go to folder you with photos you wish to edit
+
+> lzexf
