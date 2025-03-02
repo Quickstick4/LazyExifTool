@@ -1,6 +1,7 @@
 #Saves/execute commands if a, b, c is newer than x
 #e.g. x: a, b, c
 #	do this
+#Must have tabs as white space...
 
 #changed program output name for being more lazy
 lzexf: exif-program.o wipe.o
@@ -15,8 +16,8 @@ wipe.o: wipe.cpp Headers/additionalMethods.hpp
 PREFIX = /usr/local
 
 install: lzexf
-	    mkdir -p $(DESTDIR)$(PREFIX)/bin
-	    cp $< $(DESTDIR)$(PREFIX)/bin/lzexf
+	mkdir -p $(DESTDIR)$(PREFIX)/bin
+	cp $< $(DESTDIR)$(PREFIX)/bin/lzexf
 
-uninstall:
-    rm -f $(DESTDIR)$(PREFIX)/bin/lzexf
+uninstall: lzexf
+	rm -f $(DESTDIR)$(PREFIX)/bin/lzexf
